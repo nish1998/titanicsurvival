@@ -26,6 +26,7 @@ def predict():
             return jsonify(X.tolist())
 
         return jsonify(loaded_model.predict(X).tolist())
+
 @app.route('/')
 def index():
     return "ok"
