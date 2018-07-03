@@ -1,0 +1,4 @@
+create a virtual environment, 
+install every package u need there and check if working in localhost or not 
+if working then directly push to heroku master
+done 

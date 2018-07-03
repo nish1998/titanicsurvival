@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 Created on Mon Jul  2 14:50:12 2018
 
@@ -8,11 +6,13 @@ Created on Mon Jul  2 14:50:12 2018
 #from __future__ import print_function # In python 2.7
 from flask import Flask, request, jsonify
 import numpy as np
-import pandas as pd
 import pickle
-import os
 
 app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return "ok"
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -26,10 +26,6 @@ def predict():
             return jsonify(X.tolist())
 
         return jsonify(loaded_model.predict(X).tolist())
-
-@app.route('/')
-def index():
-    return "ok"
 
 if __name__ == '__main__':
     app.run()
